@@ -23,39 +23,25 @@ class BankAccount():
         if self.balance > 0:
             self.balance = self.balance + (self.balance * self.int_rate)
         return self
+
+    @classmethod
+    def print_instances(cls):
+      for i in cls.all_instances:
+        print(i.display_account_info())
 # first acc
 acc_user = BankAccount(0.02, 50)
 acc2 = BankAccount(0.08, 20)
 
-acc_user.deposit(500)
+acc_user.deposit(500).deposit(100).deposit(100).withdraw(300).withdraw(200).display_account_info()
 
-acc_user.deposit(100)
+# acc_user.display_account_info()
 
-acc_user.deposit(100)
+# acc_user.yield_interest()
 
-acc_user.withdraw(300)
-
-acc_user.withdraw(200)
-
-acc_user.display_account_info()
-
-acc_user.yield_interest()
-
-acc2.yield_interest()
+# acc2.yield_interest()
 
 # acc_user.display_account_info()
 # second acc
+acc2.deposit(700).deposit(200).withdraw(300).withdraw(100).withdraw(200).yield_interest().display_account_info()
 
-acc2.deposit(700)
-
-acc2.deposit(200)
-
-acc2.withdraw(300)
-
-acc2.withdraw(100)
-
-acc2.withdraw(200)
-
-acc2.display_account_info()
-
-acc2.display_account_info(), acc_user.display_account_info()
+# acc2.display_account_info(), acc_user.display_account_info()
